@@ -9,7 +9,7 @@
 body {
     font-family: 'Open Sans', sans-serif;
     color: #222;
-    padding-bottom: 50px;
+    padding-bottom: 0;
     
 }
 
@@ -324,4 +324,40 @@ br {
 
 .content {
     padding: 50px 100px;
+}
+
+.foot {
+    background-color: cadetblue;
+    height: 500px;
+    margin: 0 auto;
+    padding-bottom: 0;
+    
+}
+
+footer {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.end-box {
+    background-color: coral;
+    height: 430px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    padding: 10px 10px;
+}
+
+img {
+    width: 100%;
+    height: auto;
 }
