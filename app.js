@@ -1,21 +1,25 @@
 const express = require('express')
 const ejs = require('ejs')
+const date = require('./date.js')
 
 const app = express()
+
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
 
-app.get('/', (req, res) => {
-    res.render('index')
-})
 
 app.get('/about', (req, res) => {
     res.render('about')
 })
 
-
+app.get('/', (req, res) => {
+    let day = date.getDate()
+    res.render('index', {
+        listTitle: day
+    })
+})
 
 
 
