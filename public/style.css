@@ -6,8 +6,17 @@
     padding: 0;
 }
 
+:root {
+    --main-color: #d1e8e2;
+    --dark-color: #2c3531;
+    --blue-color: #116466;
+    --beige-color: #d9b08c;
+    --light-color: #ffcb9a;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
+    background-color: var(--main-color);
     color: #222;
     padding-bottom: 0;
     
@@ -20,7 +29,7 @@ body {
 
 .nav {
     position: fixed;
-    background-color: #222;
+    background-color: var(--dark-color);
     top: 0;
     left: 0;
     right: 0;
@@ -102,7 +111,7 @@ body {
     left: 30%;
     color: #fff;
     border-radius: 5px;
-    box-shadow: 0 2px 10px rgb(189, 174, 174);
+    box-shadow: 0 2px 10px var(--light-color);
 }
 
 
@@ -114,7 +123,7 @@ body {
 
 .modal-content {
     position: absolute;
-    background-color: rgb(230, 231, 240);
+    background-color: var(--main-color);
     padding: 20px 40px;
     width: 100%;
     border-radius: 10px;
@@ -144,11 +153,11 @@ body {
 .close-btn {
     padding: 1% 3%;
     background-color: rgb(196, 32, 32);
-    color: rgb(233, 193, 193);
+    color: rgb(247, 236, 236);
     border-radius: 15px;
     font-size: 1rem;
     letter-spacing: 0.1rem;
-    box-shadow: 3px -3px 3px 2px rgb(8, 6, 99);
+    box-shadow: 3px -3px 3px 2px rgb(97, 43, 43);
     outline: none;
     border: none;
     cursor: pointer;
@@ -203,7 +212,7 @@ br {
 
 .form-control input:focus {
     outline: 0;
-    border-color: #777;
+    border-color: var(--blue-color);
 }
 
 .btn-container {
@@ -215,13 +224,13 @@ br {
 
 .btn {
     padding: 2% 4%;
-    background-color: rgb(63, 37, 212);
+    background-color: var(--blue-color);
     margin-top: 10px;
-    color: rgb(220, 206, 224);
+    color: var(--main-color);
     border-radius: 7px;
     font-size: 1.1rem;
     letter-spacing: 0.1rem;
-    box-shadow: 3px -3px 3px 2px rgb(163, 135, 167);
+    box-shadow: 3px -3px 3px 2px var(--dark-color);
     outline: none;
     border: none;
     cursor: pointer;
@@ -237,13 +246,13 @@ br {
 
 .text a {
     text-decoration: none;
-    color: rgb(15, 75, 75);
+    color: var(--blue-color);
 }
 
 .form-control input:focus,
 .form-control input:valid {
     outline: 0;
-    border-bottom-color: lightblue;
+    border-bottom-color: var(--blue-color);
 }
 
 .form-control label {
@@ -266,12 +275,9 @@ br {
     transform: translateY(-30px);
 }
 
+/********* END OF MODAL *********************/
 
-
-
-
-
-.hero {
+/*.hero {
     background-image: url('img/hero.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -306,27 +312,157 @@ br {
 .hero p {
     font-size: 20px;
     letter-spacing: 1px;
+}*/
+/***************** END OF HERO ****************/
+
+/****************** PARALLAX ******************/
+
+.parallax {
+    position: relative;
+    z-index: 1;
 }
 
-.content h2,
-.content h3 {
-    font-size: 150%;
-    margin: 20px 0;
-    text-align: center;
+#trans-one {
+    background-image: url('/img/hero.jpg');
+    width: 100%;
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.content p {
-    color: #555;
-    line-height: 30px;
-    letter-spacing: 1.2px;
-    padding: 50px 150px;
-}
+/************** END OF PARALLAX ***************/
 
 .content {
     padding: 50px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.foot {
+.box {
+    background-color: var(--light-color);
+    border: dotted 1px var(--beige-color);
+    box-shadow: 4px -5px 14px 3px var(--dark-color);
+    border-radius: 5px;
+    width: 60%;
+    height: 750px;
+    padding: 20px auto;
+    margin: 50px 0;
+    
+}
+
+.box-img {
+    display: block;
+    height: 400px;
+    width: 100%;
+    padding-top: 50px;
+}
+
+.box-img img {
+    width: auto;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 2px -3px 5px 1px var(--dark-color);
+}
+
+.box-text {
+    text-align: left;
+    
+}
+
+.box-text h2 {
+    font-size: 150%;
+    font-style: italic;
+    margin: 40px 0;
+    text-align: center;
+    padding: 30px 150px 10px 150px;
+
+}
+
+.box-text p {
+    color: #555;
+    line-height: 30px;
+    letter-spacing: 1.2px;
+    padding: 0 150px;
+}
+
+.continue {
+    text-decoration: none;
+    color: rgb(25, 190, 182);
+}
+
+/*********** FOOT *********************/
+
+.bottom {
+    color: var(--main-color);
+    height: 400px;
+    opacity: 0.8;
+    display: grid;
+    grid-template-rows: 80% 20%;
+    grid-template-columns: 1fr;
+    
+}
+
+.bottom-box {
+    background-color: var(--blue-color);
+    opacity: 0.9;
+    width: 100%;
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    /*flex: 50% 50%;*/
+    border: 1px solid rgb(138, 190, 216);
+    
+}
+
+.bottom-box-item {
+    width: 50%;
+    display: flex;
+    margin: 0 80px;
+    
+}
+
+.bottom-box-item p {
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-box {
+    background-color: var(--dark-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.foot {
     background-color: cadetblue;
     height: 500px;
     margin: 0 auto;
@@ -343,21 +479,20 @@ footer {
 .end-box {
     background-color: coral;
     height: 430px;
-    
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
 
-.box {
+.foot-box {
     display: flex;
     align-items: center;
     width: 300px;
     padding: 10px 10px;
 }
 
-img {
+.foot-box img {
     width: 100%;
     height: auto;
-}
+}*/
