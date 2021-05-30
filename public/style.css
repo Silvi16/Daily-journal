@@ -93,8 +93,8 @@ body {
     cursor: pointer;
 }
 
-.nav a.current,
-.nav a:hover {
+.navLink.active,
+.navLink:hover {
     color: var(--darkOrange-color);
     font-weight: bold;
 }
@@ -422,7 +422,7 @@ br {
 
 .continue {
     text-decoration: none;
-    color: rgb(25, 190, 182);
+    color: var(--darkOrange-color);
 }
 
 /*********** FOOT *********************/

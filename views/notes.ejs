@@ -1,0 +1,23 @@
+<%- include('./partials/head.ejs') %>
+<link rel="stylesheet" href="/notes.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <body>
+        
+        <%- include('./partials/nav.ejs') %>
+    
+        
+        <div class="main-container">
+    
+            <button class="add" id="add">
+                <i class="fas fa-plus"></i> Add note
+            </button>
+
+        </div>
+
+        <%- include('./partials/footer.ejs') %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.2.2/marked.min.js"></script>
+<script src="script.js"></script>
+<script src="notes.js"></script>
+
+</body>
+</html>
