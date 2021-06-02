@@ -13,6 +13,9 @@ app.use(express.urlencoded({extended: true}))
 
 //////////////////////////////////////////////////////////////////
 
+const newItems = []
+
+
 app.get('/', (req, res) => {
     let day = date.getDate()
     res.render('index', {
@@ -50,7 +53,8 @@ app.get('/todo', (req, res) => {
     let day = date.getDate()
     res.render('todo', {
         listTitle: day,
-        title: 'ToDo'
+        title: 'ToDo',
+        newListItems: newItems
     })
 })
 
@@ -62,6 +66,11 @@ app.get('/notes', (req, res) => {
     })
 })
 
+app.post('/todo', (req, res) => {
+    let newItem = req.body.newItem
+    newItems.push(newItem)
+    res.redirect('/todo')
+})
 
 
 app.listen(8000, () => {

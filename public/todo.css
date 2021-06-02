@@ -23,12 +23,54 @@ body {
 
 /********** MAIN CONTAINER *************/
 .main-container {
-    background-color: var(--lightGrey-color);
-    height: calc(100vh - 300px);
-    
+    background-color: var(--main-color);
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+ /********* TO DO FORM *****************/
+.todoTitle {
+    color: var(--dark-color);
+    font-size: 4rem;
+    text-align: center;
+    opacity: 0.4;
 }
 
+.todoForm {
+    max-width: 100%;
+    width: 400px;
+}
 
+.todoInput {
+    border: none;
+    padding: 1rem 2rem;
+    display: block;
+    width: 100%;
+}
+
+.todoInput::placeholder {
+    color: var(--lightGrey-color);
+}
+
+.todos {
+    background-color: var(--main-color);
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.todos li {
+    border-top: 1px solid var(--darkOrange-color);
+    text-decoration: line-through;
+}
+
+small {
+    color: var(--lightOrange-color);
+    margin-top: 3rem;
+    text-align: center;
+}
 
 /*********** NAVIGATION *****************/
 .nav {
