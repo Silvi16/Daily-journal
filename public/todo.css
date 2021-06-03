@@ -31,45 +31,81 @@ body {
     flex-direction: column;
 }
  /********* TO DO FORM *****************/
+.todoBox {
+    background-color: var(--lightGrey-color);
+    padding: 40px 40px;
+    border-radius: 10px;
+    box-shadow: 2px -3px 5px 1px var(--dark-color);
+}
+
 .todoTitle {
     color: var(--dark-color);
-    font-size: 4rem;
+    font-size: 3.5rem;
     text-align: center;
     opacity: 0.4;
+    margin-bottom: 30px;
+}
+
+.todoItem {
+    background-color: var(--lightOrange-color);
+    max-width: 100%;
+    width: 400px;
+}
+.todoItem p {
+    height: 45px;
+    background-color: var(--main-color);
+    padding-top: 10px;
+    padding-left: 20px;
+    border: 1px solid var(--lightGrey-color);
+    border-radius: 10px;
+    margin: 5px;
+}
+
+#todoEl .completed {
+    color: var(--darkGrey-color);
+    text-decoration: line-through;
 }
 
 .todoForm {
     max-width: 100%;
     width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .todoInput {
+    background-color: var(--main-color);
     border: none;
     padding: 1rem 2rem;
     display: block;
     width: 100%;
+    height: 45px;
+    margin-top: 70px;
+    border-radius: 5px;
+    border-bottom: 2px ridge var(--lightGrey-color);
 }
 
 .todoInput::placeholder {
-    color: var(--lightGrey-color);
+    color: var(--darkGrey-color);
+    font-family: inherit;
+    font-size: 1rem;
 }
 
-.todos {
-    background-color: var(--main-color);
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-}
-
-.todos li {
-    border-top: 1px solid var(--darkOrange-color);
-    text-decoration: line-through;
-}
-
-small {
-    color: var(--lightOrange-color);
-    margin-top: 3rem;
-    text-align: center;
+.todoBtn {
+    background-color: var(--lightOrange-color);
+    max-width: 70%;
+    width: 200px;
+    height: 40px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 2px -3px 5px 1px var(--dark-color);
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
 /*********** NAVIGATION *****************/

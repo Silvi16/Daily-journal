@@ -10,26 +10,35 @@
             <div class="todoBox">
 
                 <h1 class="todoTitle">My ToDos</h1>
+                <% for (let i = 0; i < newListItems.length; i++) { %>
+                <div class="todoItem">
+                    <p id="todoEl"><%= newListItems[i] %></p>
+                </div>
+                <% } %>
 
-                
-
-
-
-                <!-------------------------
-                <form id="todoForm">
-                    <input type="text" name="newItem" class="todoInput" id="todoInput" placeholder="Enter your todo item" autocomplete="off">
-                    <% for (let i = 0; i < newListItems.length; i++) { %>
-                    <ul class="todos" id="todos">
-                        <li class="todoItem"><%= newListItems[i] %></li>
-                    </ul>
-                    <% } %>
+                <form action="/todo" method="post" class="todoForm">
+                <input type="text" class="todoInput" name="newItem" placeholder="My New ToDo" autocomplete="off">
+                <button type="submit" name="todoBtn" class="todoBtn">Add Item</button>
                 </form>
-                -------------------------->
+
             </div>
 
         </div>
 
         <%- include('./partials/footer.ejs') %>
 <script src="script.js"></script>
+<script>
+    // NOT WORKING - i want to cross out the element after completed
+    
+    let todoEl = document.getElementById('todoEl')
+
+    todoEl.addEventListener('click', function(e) {
+        if(e.target.tagName === 'p') {
+            e.target.classList.toggle('completed')
+        }
+    })
+        
+    
+</script>
 </body>
 </html>

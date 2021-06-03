@@ -32,7 +32,6 @@ app.get('/index', (req, res) => {
     })
 })
 
-
 app.get('/about', (req, res) => {
     let day = date.getDate()
     res.render('about', {
@@ -58,6 +57,13 @@ app.get('/todo', (req, res) => {
     })
 })
 
+app.post('/todo', (req, res) => {
+    let newItem = req.body.newItem
+    newItems.push(newItem)
+    res.redirect('todo')
+})
+
+
 app.get('/notes', (req, res) => {
     let day = date.getDate()
     res.render('notes', {
@@ -66,11 +72,7 @@ app.get('/notes', (req, res) => {
     })
 })
 
-app.post('/todo', (req, res) => {
-    let newItem = req.body.newItem
-    newItems.push(newItem)
-    res.redirect('/todo')
-})
+
 
 
 app.listen(8000, () => {
