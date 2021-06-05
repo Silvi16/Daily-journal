@@ -8,15 +8,18 @@
         <div class="main-container">
     
             <div class="add-blog">
-                <form action="">
+                <form action="/blogs" method="post">
+                    <div class="box-img">
+                        <img src="img/aperitif.jpg" name="blogImg" alt="image">
+                    </div>
                     <label for="title">Blog title:</label>
-                    <input type="text" id="title" required>
+                    <input type="text" name="blogTitle" id="blogTitle" required>
                     <label for="snippet">Blog snippet:</label>
-                    <input type="text" id="snippet" required>
+                    <input type="text" name="snippet" id="snippet" required>
                     <label for="body">Blog body:</label>
                     <textarea name="content" id="body" cols="100" rows="20" placeholder="Here comes the text...."></textarea>
                     <div class="btn">
-                        <button class="submit">Submit</button>
+                        <button type="submit" class="submit">Publish</button>
                     </div>
                 </form>
             </div>

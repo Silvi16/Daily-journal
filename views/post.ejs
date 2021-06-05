@@ -1,0 +1,29 @@
+<%- include('./partials/head.ejs') %>
+<link rel="stylesheet" href="/style.css">
+    <body>
+        
+        <%- include('./partials/nav.ejs') %>
+    
+        
+        <div class="main-container">
+            <section class="container content">
+
+                
+                <div class="box">
+                    <div class="box-img">
+                        <img src="img/aperitif.jpg" name="blogImg" alt="image">
+                    </div>
+                    <div class="box-text">
+                    <h2> <%= postTitle %> </h2>
+                    <h4> <%= postSnippet %> </h4>
+                    <p> <%= postContent.substring(0, 200) + "..." %><a class="continue" href="#">Continue reading...</a></p> 
+                    </div>
+                </div>
+                
+    
+            </section>
+        </div>
+        <%- include('./partials/footer.ejs') %>
+<script></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 const express = require('express')
 const ejs = require('ejs')
 const date = require('./date.js')
-
+const _ = require('lodash')
 
 const app = express()
 
@@ -13,23 +13,53 @@ app.use(express.urlencoded({extended: true}))
 
 //////////////////////////////////////////////////////////////////
 
-const newItems = []
+let newItems = []
+let blogPosts = []
 
-
-app.get('/', (req, res) => {
-    let day = date.getDate()
-    res.render('index', {
-        listTitle: day,
-        title: 'Home'
-    })
-})
 
 app.get('/index', (req, res) => {
     let day = date.getDate()
     res.render('index', {
         listTitle: day,
-        title: 'Home'
+        title: 'Home',
+        blogPosts: blogPosts
     })
+})
+
+app.get('/', (req, res) => {
+    res.redirect('index')
+})
+
+app.get('/index/:entry', (req, res) => {
+    let requestTitle = _.lowerCase(req.params.entry)
+
+    blogPosts.forEach(blogPost => {
+        let day = date.getDate()
+        const storedTitle = _.lowerCase(blogPost.blogTitle)
+        if (requestTitle === storedTitle) {
+            res.render('post', {
+                listTitle: day,
+                title: 'Post',
+                postTitle: blogPost.blogTitle,
+                postSnippet: blogPost.snippet,
+                postContent: blogPost.content
+            })
+        } 
+    })
+    
+})
+
+
+app.post('/blogs', (req, res) => {
+    const blogPost = {
+        blogTitle: req.body.blogTitle,
+        snippet: req.body.snippet,
+        content: req.body.content
+    }
+    
+    blogPosts.push(blogPost)
+    res.redirect('/index')
+    
 })
 
 app.get('/about', (req, res) => {
@@ -48,6 +78,8 @@ app.get('/blogs', (req, res) => {
     })
 })
 
+
+
 app.get('/todo', (req, res) => {
     let day = date.getDate()
     res.render('todo', {
@@ -55,12 +87,6 @@ app.get('/todo', (req, res) => {
         title: 'ToDo',
         newListItems: newItems
     })
-})
-
-app.post('/todo', (req, res) => {
-    let newItem = req.body.newItem
-    newItems.push(newItem)
-    res.redirect('todo')
 })
 
 
@@ -71,6 +97,19 @@ app.get('/notes', (req, res) => {
         title: 'Notes'
     })
 })
+
+app.post('/todo', (req, res) => {
+    let newItem = req.body.newItem
+    newItems.push(newItem)
+    res.redirect('todo')
+})
+
+
+
+
+
+
+
 
 
 

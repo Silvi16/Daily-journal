@@ -407,10 +407,17 @@ br {
 .box-text h2 {
     font-size: 150%;
     font-style: italic;
-    margin: 40px 0;
+    margin: 10px 0;
     text-align: center;
     padding: 30px 150px 10px 150px;
+}
 
+.box-text h4 {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin: 10px 0;
+    text-align: center;
+    padding: 10px 150px 10px 150px;
 }
 
 .box-text p {
@@ -418,6 +425,7 @@ br {
     line-height: 30px;
     letter-spacing: 1.2px;
     padding: 0 150px;
+    max-width: 100ch;
 }
 
 .continue {
