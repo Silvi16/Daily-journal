@@ -49,7 +49,6 @@ app.get('/index/:entry', (req, res) => {
     
 })
 
-
 app.post('/blogs', (req, res) => {
     const blogPost = {
         blogTitle: req.body.blogTitle,
